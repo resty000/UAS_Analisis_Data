@@ -1,6 +1,8 @@
 # 🎵 Spotify Songs Analysis Project 🎶
 
-![WhatsApp Image 2025-01-04 at 17 15 40_5f49f00d](https://github.com/user-attachments/assets/496e2597-5f95-4c4e-8149-3e98a3d11bfe)
+<p align="center">
+  <img src="image/download.jpeg" alt="Spotify Analysis" width="300"/>
+</p>
 
 ---
 
@@ -25,24 +27,26 @@ Tujuan utama dari proyek ini adalah untuk menganalisis dataset lagu Spotify guna
 ---
 
 ## 🗂️ Variables Information
-Berikut adalah deskripsi variabel dalam dataset:
-- **`track_popularity`**: Skor popularitas lagu (0-100).
-- **`track_name`**: Nama lagu.
-- **`track_artist`**: Artis dari lagu.
-- **`track_album_name`**: Nama album.
-- **`track_album_release_date`**: Tanggal rilis album.
-- **`playlist_genre`**: Genre dari playlist.
-- **`playlist_subgenre`**: Subgenre dari playlist.
-- **`duration_ms`**: Durasi lagu dalam milidetik.
-- **`energy`**: Tingkat energi lagu (0-1).
-- **`danceability`**: Skor danceability (0-1).
-- **`loudness`**: Kerasnya lagu dalam desibel.
-- **`tempo`**: Tempo lagu dalam ketukan per menit (BPM).
-- **`acousticness`**: Skor akustik (0-1).
-- **`instrumentalness`**: Skor instrumental (0-1).
-- **`valence`**: Skor valensi (0-1).
-- **`speechiness`**: Skor speechiness (0-1).
-- **`liveness`**: Skor liveness (0-1).
+| Variable                | Description                                     |
+|-------------------------|-------------------------------------------------|
+| track_popularity        | Skor popularitas lagu (0-100)                   |
+| track_name              | Nama lagu                                       |
+| track_artist            | Artis dari lagu                                 |
+| track_album_name        | Nama album                                      |
+| track_album_release_date| Tanggal rilis album                             |
+| playlist_genre          | Genre dari playlist                             |
+| playlist_subgenre       | Subgenre dari playlist                          |
+| duration_ms             | Durasi lagu dalam milidetik                     |
+| energy                  | Tingkat energi lagu (0-1)                       |
+| danceability            | Skor danceability (0-1)                         |
+| loudness                | Kerasnya lagu dalam desibel                     |
+| tempo                   | Tempo lagu dalam BPM                            |
+| acousticness            | Skor akustik (0-1)                              |
+| instrumentalness        | Skor instrumental (0-1)                         |
+| valence                 | Skor valensi (0-1)                              |
+| speechiness             | Skor speechiness (0-1)                          |
+| liveness                | Skor liveness (0-1)                             |
+
 
 ---
 
@@ -57,13 +61,13 @@ Berikut adalah deskripsi variabel dalam dataset:
 
 ## 📂 File Structure
 
-
-spotify_analysis/
+```
+UAS_Analisis_Data/
 ├── bigdata.txt                          
 ├── project_analisis_big_data.ipynb
 ├── README.md
 ├── image/        
-
+```
 
 ## 🧰 Steps and Code Explanation
 
@@ -188,5 +192,5 @@ Analisis dataset lagu Spotify memberikan wawasan berharga tentang faktor-faktor 
 
 ---
 
-🎉 **Terima kasih telah berkontribusi!**
+### ⭐ Don't forget to give a star if you like this project, thankyou! ⭐
 
