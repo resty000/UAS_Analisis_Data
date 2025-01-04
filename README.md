@@ -63,8 +63,8 @@ Tujuan utama dari proyek ini adalah untuk menganalisis dataset lagu Spotify guna
 
 ```
 UAS_Analisis_Data/
-├── bigdata.txt                          
-├── project_analisis_big_data.ipynb
+├── requirements.txt                          
+├── Project_Analisis_Big_Data.ipynb
 ├── README.md
 ├── image/        
 ```
