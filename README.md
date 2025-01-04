@@ -1,4 +1,15 @@
-# 🎵 Spotify Dataset Analysis 🎶
+# 🎵 Spotify Songs Analysis Project 🎶
+
+![WhatsApp Image 2025-01-04 at 17 15 40_5f49f00d](https://github.com/user-attachments/assets/496e2597-5f95-4c4e-8149-3e98a3d11bfe)
+
+---
+
+## 👨‍💻 Team
+- *RESTY PUTRI SUCI YANI - 202110370311180*
+- *KENS URGANIS AWANGSARI PUTTRISIA S. - 202110370311273*
+
+---
+
 
 ## 🎯 Problem Statement
 Tujuan utama dari proyek ini adalah untuk menganalisis dataset lagu Spotify guna mengungkap wawasan terkait popularitas lagu, distribusi genre, dan hubungan antara berbagai fitur audio dengan popularitas lagu. Analisis ini bertujuan untuk memberikan wawasan yang dapat ditindaklanjuti bagi produser musik, pemasar, dan kurator playlist untuk meningkatkan strategi mereka dalam promosi lagu dan pembuatan playlist.
@@ -44,15 +55,103 @@ Berikut adalah deskripsi variabel dalam dataset:
 
 ---
 
+## 📂 File Structure
+
+
+spotify_analysis/
+├── bigdata.txt                          
+├── project_analisis_big_data.ipynb
+├── README.md
+├── image/        
+
+
+## 🧰 Steps and Code Explanation
+
+### *1. Import Library*
+python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+- Library untuk analisis data dan visualisasi.
+
+### *2. Load Dataset*
+python
+path='/content/drive/MyDrive/Project Analisis Big Data/spotify/spotify_songs.csv'
+df=pd.read_csv(path)
+df.head()
+
+### *3. Data Cleaning*
+python
+missing_values = spotify_df.isnull().sum()
+spotify_df.fillna(spotify_df.mode().iloc[0], inplace=True)
+
+- Mengisi nilai kosong dengan modus untuk kategorikal.
+
+### *4. Outliers Handling*
+python
+for col in numerical_columns:
+    Q1 = spotify_df[col].quantile(0.25)
+    Q3 = spotify_df[col].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    spotify_df = spotify_df[(spotify_df[col] >= lower_bound) & (spotify_df[col] <= upper_bound)]
+
+- Outlier ditangani menggunakan IQR.
+
+### *5. Exploratory Data Analysis (EDA)*
+- *Unvariate Analysis*:
+python
+plt.figure(figsize=(18, r * 3))
+for n, var in enumerate(target_variables):
+  plot = plt.subplot(r, 3, n + 1)
+  sns.countplot(x=new_df[var], ax=plot).margins(y=0.15)
+  plt.title(f'{var.title()}', weight='bold')
+  plt.tight_layout()
+  annot_percent(plot)
+
+![Unvariate Analysis](image/image.png)  
+(Placeholder image: Unvariate Analysis plot)
+
+- *Bivariate Analysis*:
+python
+plt.figure(figsize=(12, 8))
+
+numeric_df = df.select_dtypes(include=np.number)
+
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt='.2f', cbar=True)
+plt.title('Korelasi Antar Fitur Numerik')
+plt.show()
+
+![Bivariate Analysis](image/images.png)  
+(Placeholder image: Bivariate Analysis plot)
+
+- *Multivariate Analysis*:
+python
+# Memilih kolom numerik yang relevan
+numerical_features = ['track_popularity', 'danceability', 'energy',
+                      'key', 'loudness', 'speechiness', 'acousticness',
+                      'instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms']
+
+new_df2 = df[numerical_features]
+
+# Plotting pair plot untuk kolom numerik
+plt.figure(figsize=(12,10))
+sns.pairplot(new_df2)
+plt.suptitle('Pair Plot Fitur Numerik Dataset Sportify', y=1.02)  # Menambahkan judul
+plt.show()
+
+![Multivariate Analysis](image/imagee.png)  
+(Placeholder image: Multivariate Analysis plot)
+
+---
+
 ## 💡 Solutions to Business Objectives
 1. **🎼 Pembuatan Playlist:** Gunakan wawasan tentang genre dan subgenre yang populer untuk mengkurasi playlist yang sesuai dengan preferensi pendengar.
 2. **📣 Strategi Pemasaran:** Fokus pada promosi lagu dengan energi dan danceability tinggi, karena fitur-fitur ini berkorelasi dengan popularitas yang lebih tinggi.
 3. **⏳ Waktu Rilis:** Jadwalkan rilis baru selama bulan-bulan puncak yang diidentifikasi dalam analisis untuk memaksimalkan visibilitas dan keterlibatan pendengar.
-
----
-
-## ✅ Conclusion
-Analisis dataset lagu Spotify memberikan wawasan berharga tentang faktor-faktor yang memengaruhi popularitas lagu dan preferensi pendengar. Dengan memahami hubungan antara fitur audio dan popularitas, serta distribusi genre, para pemangku kepentingan dapat membuat keputusan yang lebih baik terkait promosi musik dan pembuatan playlist.
 
 ---
 
@@ -66,6 +165,13 @@ Analisis dataset lagu Spotify memberikan wawasan berharga tentang faktor-faktor 
 ## 🔭 Future Work
 1. **⏱️ Analisis Waktu Nyata:** Menerapkan sistem untuk analisis data waktu nyata agar tetap mengikuti perubahan tren musik.
 2. **👂 Integrasi Umpan Balik Pengguna:** Menggabungkan umpan balik pengguna dan kebiasaan mendengar untuk meningkatkan akurasi wawasan.
+3. **🔍 Prediksi Tren Popularitas:** Gunakan model machine learning untuk memprediksi popularitas lagu.
+
+
+---
+
+## ✅ Conclusion
+Analisis dataset lagu Spotify memberikan wawasan berharga tentang faktor-faktor yang memengaruhi popularitas lagu dan preferensi pendengar. Dengan memahami hubungan antara fitur audio dan popularitas, serta distribusi genre, para pemangku kepentingan dapat membuat keputusan yang lebih baik terkait promosi musik dan pembuatan playlist.
 
 ---
 
@@ -81,9 +187,6 @@ Analisis dataset lagu Spotify memberikan wawasan berharga tentang faktor-faktor 
 3. Jalankan analisis dataset sesuai dengan notebook atau script yang disediakan.
 
 ---
-
-## 🤝 Contributions
-Kontribusi sangat dihargai! Silakan buat pull request atau laporkan masalah apa pun di bagian *issues*. 
 
 🎉 **Terima kasih telah berkontribusi!**
 
